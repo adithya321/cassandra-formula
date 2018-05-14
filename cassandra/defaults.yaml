@@ -1,15 +1,15 @@
 cassandra:
-  series: 39x
+  series: 311x
   keyserver: keyserver.ubuntu.com
   keyid: FE4B2BDA
 
   conf:
     dc: dc1
     rack: rack1
-    cluster_name: Test Cluster
+    cluster_name: MyCassandraCluster
     authenticator: AllowAllAuthenticator
     listen_address: localhost
     rpc_address: localhost
     seeds:
       - 127.0.0.1
-    endpoint_snitch: SimpleSnitch
+    endpoint_snitch: GossipingPropertyFileSnitch
