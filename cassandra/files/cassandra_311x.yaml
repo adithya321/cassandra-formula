@@ -131,7 +131,7 @@ role_manager: CassandraRoleManager
 # - AllowAllNetworkAuthorizer allows access to any DC to any user - set it to disable authorization.
 # - CassandraNetworkAuthorizer stores permissions in system_auth.network_permissions table. Please
 #   increase system_auth keyspace replication factor if you use this authorizer.
-network_authorizer: AllowAllNetworkAuthorizer
+# network_authorizer: AllowAllNetworkAuthorizer
 
 # Validity period for roles cache (fetching granted roles can be an expensive
 # operation depending on the role manager, CassandraRoleManager is one example)
@@ -769,7 +769,7 @@ column_index_cache_size_in_kb: 2
 # concurrent_validations: 0
 
 # Number of simultaneous materialized view builder tasks to allow.
-concurrent_materialized_view_builders: 1
+# concurrent_materialized_view_builders: 1
 
 # Throttles compaction to the given total throughput across the entire
 # system. The faster you insert data, the faster you need to compact in
@@ -958,12 +958,12 @@ dynamic_snitch_badness_threshold: 0.1
 #
 server_encryption_options:
     # set to true for allowing secure incoming connections
-    enabled: false
+    # enabled: false
     # If enabled and optional are both set to true, encrypted and unencrypted connections are handled on the storage_port
-    optional: false
+    # optional: false
     # if enabled, will open up an encrypted listening socket on ssl_storage_port. Should be used
     # during upgrade to 4.0; otherwise, set to false.
-    enable_legacy_ssl_storage_port: false
+    # enable_legacy_ssl_storage_port: false
     # on outbound connections, determine which type of peers to securely connect to. 'enabled' must be set to true.
     internode_encryption: none
     keystore: conf/.keystore
@@ -1188,9 +1188,9 @@ back_pressure_strategy:
 
 # Audit logging - Logs every incoming CQL command request, authentication to a node. See the docs
 # on audit_logging for full details about the various configuration options.
-audit_logging_options:
-    enabled: false
-    logger: BinAuditLogger
+# audit_logging_options:
+    # enabled: false
+    # logger: BinAuditLogger
     # audit_logs_dir:
     # included_keyspaces: 
     # excluded_keyspaces:
