@@ -8,8 +8,9 @@ cassandra:
     rack: rack1
     cluster_name: MyCassandraCluster
     authenticator: AllowAllAuthenticator
-    listen_address: localhost
-    rpc_address: localhost
+    listen_address: {{ grains['ip4_interfaces']['eth0'][0] }}
+    rpc_address: {{ grains['ip4_interfaces']['eth0'][0] }}
+    broadcast_address: {{ grains['ip4_interfaces']['eth0'][0] }}
     seeds:
-      - 127.0.0.1
+      - {{ grains['ip4_interfaces']['eth0'][0] }}
     endpoint_snitch: GossipingPropertyFileSnitch
